@@ -1,23 +1,30 @@
 import React, { Component } from 'react';
-import {
-    Platform,
-    StyleSheet,
-    Text,
-    View,
-    ScrollView
-} from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import { Actions, Scene, Router } from 'react-native-router-flux';
+
+import Screen1 from './sections/Screen1'
+import Screen2 from './sections/Screen2'
 
 export default class App extends Component {
 
     render() {
 
         return (
+            <Router>
+                <Scene key="root">
+                    
+                    <Scene 
+                        key={'screen1'}
+                        component={Screen1} 
+                    />
 
-            <View>
+                    <Scene 
+                        key={'screen2'} 
+                        component={Screen2} 
+                    />
 
-
-
-            </View>
+                </Scene>
+            </Router>
         );
     }
 }
